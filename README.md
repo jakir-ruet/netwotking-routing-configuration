@@ -35,8 +35,27 @@ It is a decentralized hierarchical naming system that is used to translate human
 7. Caching 
    The resolver caches the IP address and associated information obtained from the authoritative name servers for a certain amount of time (called the TTL, or Time to Live). This helps to speed up future queries for the same domain and reduces the load on DNS servers.
 
+8. Primary/Master DNS Server
+   It is an authoritative server. The master database of a domain information is stored here and Resource Records (RR) are entered/added in this database from this server.
+
+9.  Secondary/Slave DNS Server
+    It also is an authoritative server. The replica (slave) database of a domains information is stored here. No Resource Records (RR) entries are given in this server, it is polled from the master/primary server. 
+
 ***DNS Architecture***
 ![DNS Architecture](./img/dns-architecture.png)
+```bash
+ip addr
+```
+```bash
+apt install bind9
+```
+```bash
+named -v
+```
+```bash
+hostnamectl status
+```
+
 ## Courtesy of Jakir
 
 [![LinkedIn][linkedin-shield-jakir]][linkedin-url-jakir]
